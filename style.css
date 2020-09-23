@@ -1,0 +1,20 @@
+a {
+    color: orange;
+
+}
+
+a:visited {
+    color: green;
+}
+
+a:active {
+    color: red;
+}
+
+a:hover {
+    color: black;
+}
+
+a:focus {
+    color: purple;
+}
