@@ -11,10 +11,24 @@
     // Write code here!
 
     var likeSushi = confirm ("Do you like sushi?");
-    var sushiType = prompt ("What kind of sushi?");
+
+    if (likeSushi) {
+      var sushiType = prompt ("What kind of sushi?");
+    }
+
+    else {
+      alert ("You clearly don't like sushi.  Why would I ask you what kind of sushi you like?");
+    }
 
     alert ("You like sushi is " + likeSushi);
-    alert ("Your sushi type is " + sushiType);
+
+    if (likeSushi) {
+      alert ("Your sushi type is " + sushiType);
+    }
+
+    else {
+      alert ("Again, you didn't like sushi.  So, we don't care what sushi you would like since you don't like it.  Please like this on Facebook.");
+    }
 
     </script>
 
