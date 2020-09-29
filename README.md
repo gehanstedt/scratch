@@ -1,11 +1,9 @@
 ### File
 
-* *None*
+* [`pizza-variables-2`](Unsolved/pizza-variables-2.html)
 
 ### Instructions
 
-* As a repeat of last class, quickly create an HTML web page.
+* Using the file above as a guide, modify the code so that it uses `console.log` instead of alerts to display messages.
 
-* Then add in a Bootstrap component of your choosing.
-
-* **HINT:** Copy the Bootstrap CSS link. Then copy the code from any Bootstrap element or CSS.
+* With a partner, discuss the difference between using `console.log` and `alert`.
