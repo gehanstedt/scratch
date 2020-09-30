@@ -1,13 +1,15 @@
 ### File
 
-* *None*
+* _None_
 
 ### Instructions
 
-* Create a website (from scratch) that asks users if they eat steak.
+* Starting from scratch, write code that loops through the following array and logs the name of each animal on the farm to the console:
 
-* If they respond with "yes", alert the following to the page: "Here’s a Steak Sandwich!"
+```
+var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+```
 
-* If they respond with "no", alert the following to the page: "Here’s a Tofu Stir-Fry!"
+* Then check if the first letter in the animal's name begins with a "c" or "o". If it does, create an alert saying, "Starts with 'c' or 'o'!"
 
-* **BONUS:** Ask what the user’s birth year is. If they are under 21, alert the following: "No Sake for you!"
+* **HINT:** You can access the first character of a string as if it were the first element of an array.

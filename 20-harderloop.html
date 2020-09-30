@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>More Loops</title>
+  </head>
+  <body>
+
+    <h1>Open the console to see the magic!</h1>
+
+    <script>
+
+      var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+
+      for (var count = 0; count < myFarm.length; count++)
+      {
+        console.log ("Farm animal: " + myFarm[count]);
+        if ((myFarm[count][0] == 'c') || (myFarm[count][0] == 'o')) {
+          console.log ("found c or o");
+        }
+      }
+
+    </script>
+    
+  </body>
+</html>
