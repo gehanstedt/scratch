@@ -4,14 +4,10 @@
 
 ### Instructions
 
-* Starting from scratch, create a `for` loop that console logs the following lines:
+* From scratch, create a small application that will do two things:
 
-```
-I am 0
-I am 1
-I am 2
-I am 3
-I am 4
-```
+  1. Check which OS the user is on and alert a message that says, _"Welcome, Windows user!"_ or, _"Welcome, Mac user!"_
 
-* **NOTE:** Don't use an array!
+  2. Then check their **geolocation** and redirect them to a new page depending on if they are located in the eastern or western half of the USA.
+
+* You'll need to do some research on how to gather some of this information, but here's a hint: it's going to be part of the `window` object we just looked at.
