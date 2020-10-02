@@ -1,48 +1,27 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Let them eat steak!</title>
+    <title>Location Redirect</title>
   </head>
   <body>
+    <h1>Open the console to see the magic!</h1>
 
-    <script type="text/javascript">
-
-    // Write code here!
-
-    var likeSteak = confirm ("Do you like steak?");
-
-    if (likeSteak) {
-      var likeSteakRare = confirm ("Excellent.  Do you like it Rare?");
-    }
-
-    if (likeSteak && likeSteakRare) {
-      alert ("I see a person after my own taste.  Rare is the best.");
-    }
-
-    else if (likeSteak) {
-      alert ("Steak is delicious.  Have a Steak Sandwich.  Contact BCS support to receive it.");
-    }
-
-    else {
-      alert ("What??  Here is a tofu stir-fry");
-    }
-
-    var yearBornString = prompt ("What year were you born?");
-
-    var yearBorn = parseInt (yearBornString);
-
-    var age = 2020 - yearBorn;
-
-    if (age < 21) {
-      alert ("You're a youngin' at " + age + ".  No sake for you.");
-    }
-
-    else { 
-      alert ("Step up to the bar my " + age + " year-old friend, and get some Sake!!");
-    }
-
+    <script>
+      var OS_Name = navigator.appVersion;
+      if (OS_Name.indexOf("Win") != -1) {
+        alert ("Welcome - Windows Operating System ");
+      } else if (OS_Name.indexOf("Mac") != -1) {
+        alert ("Welcome - Mac Operating System ");
+      } else if (OS_Name.indexOf("X11") != -1) {
+        alert ("Welcome - Unix Operating System ");
+      } else if (OS_Name.indexOf("Linux") != -1) {
+        alert ("Welcome - Linux Operating System ");
+      } else if (OS_Name.indexOf("SunOS") != -1) {
+        alert ("Welcome - Solaris Operating System ");
+      } else {
+        alert ("Welcome - Unknown Operation System ");
+      }
     </script>
-
   </body>
 </html>
