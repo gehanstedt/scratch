@@ -22,6 +22,49 @@
       } else {
         alert ("Welcome - Unknown Operation System ");
       }
+
+//      var currentLocation = navigator.geolocation.getCurrentPosition (success, error);
+//      console (currentLocation);
+
+/*
+        New york is:  40.71427, -74.00597
+        Los Angeles is:  34.05223, -118.24368
+  */
+
+      const farWest = -74.00597;
+      const farEast = -118.24368;
+
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+
+      function success(pos) {
+        var crd = pos.coords;
+
+        console.log('Your current position is:');
+        console.log(`Latitude : ${crd.latitude}`);
+        console.log(`Longitude: ${crd.longitude}`);
+        console.log(`More or less ${crd.accuracy} meters.`);
+
+        console.log ("Middle point is: " + (farEast + farWest) / 2);
+
+        if (crd.latitude < (farEast + farWest) / 2) {
+          console.log("You are towards the west.");
+        }
+
+        else {
+          console.log ("You are towards the east.");
+        }
+      }
+
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+
     </script>
   </body>
 </html>
