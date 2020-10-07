@@ -1,70 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Location Redirect</title>
-  </head>
-  <body>
-    <h1>Open the console to see the magic!</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Look Ma No HTML</title>
+</head>
+<body>
+  <script src="./script.js"></script>
 
-    <script>
-      var OS_Name = navigator.appVersion;
-      if (OS_Name.indexOf("Win") != -1) {
-        alert ("Welcome - Windows Operating System ");
-      } else if (OS_Name.indexOf("Mac") != -1) {
-        alert ("Welcome - Mac Operating System ");
-      } else if (OS_Name.indexOf("X11") != -1) {
-        alert ("Welcome - Unix Operating System ");
-      } else if (OS_Name.indexOf("Linux") != -1) {
-        alert ("Welcome - Linux Operating System ");
-      } else if (OS_Name.indexOf("SunOS") != -1) {
-        alert ("Welcome - Solaris Operating System ");
-      } else {
-        alert ("Welcome - Unknown Operation System ");
-      }
-
-//      var currentLocation = navigator.geolocation.getCurrentPosition (success, error);
-//      console (currentLocation);
-
-/*
-        New york is:  40.71427, -74.00597
-        Los Angeles is:  34.05223, -118.24368
-  */
-
-      const farWest = -74.00597;
-      const farEast = -118.24368;
-
-      var options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-      };
-
-      function success(pos) {
-        var crd = pos.coords;
-
-        console.log('Your current position is:');
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
-        console.log(`More or less ${crd.accuracy} meters.`);
-
-        console.log ("Middle point is: " + (farEast + farWest) / 2);
-
-        if (crd.latitude < (farEast + farWest) / 2) {
-          console.log("You are towards the west.");
-        }
-
-        else {
-          console.log ("You are towards the east.");
-        }
-      }
-
-      function error(err) {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
-      }
-
-      navigator.geolocation.getCurrentPosition(success, error, options);
-
-    </script>
-  </body>
+</body>
 </html>
