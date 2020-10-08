@@ -1,40 +1,49 @@
-// Create your HTML Page via DOM Methods here!
+var emailInput = document.querySelector("#email");
+var passwordInput = document.querySelector("#password");
+var signUpButton = document.querySelector("#sign-up");
+var msgDiv = document.querySelector("#msg");
+var userEmailSpan = document.querySelector("#user-email");
+var userPasswordSpan = document.querySelector("#user-password");
 
-var h1Tag = document.createElement("h1");
-h1Tag.textContent = "This was made in class!";
-document.body.appendChild(h1Tag);
-h1Tag.setAttribute("style", "text-align: center");
+renderLastRegistered();
 
-var h2Tag = document.createElement("h2");
-h2Tag.textContent = "Another h2 masterpiece!";
-document.body.appendChild(h2Tag);
-h2Tag.setAttribute ("style", "text-align: center");
-
-var imgTag = document.createElement("img");
-document.body.appendChild (imgTag);
-imgTag.setAttribute ("src", "image_1.jpg");
-imgTag.setAttribute ("style", "display: block; margin-left: auto; margin-right: auto; width: 50%");
-
-var ulTag = document.createElement("ul");
-document.body.appendChild (ulTag);
-
-/* var liTag;
-for (count = 0; count < 10; count ++) {
-    liTag[count] = document.createElement ("li");
-    ulTag.appendChild (liTag[count]);
-    liTag[count].textContent = "List item" + count;
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
 }
- */
 
-    liTag1 = document.createElement ("li");
-    ulTag.appendChild (liTag1);
-    liTag1.textContent = "List item 1";
+function renderLastRegistered() {
+  var email = localStorage.getItem ("email");
+  var password = localStorage.getItem ("password");
 
-    liTag2 = document.createElement ("li");
-    ulTag.appendChild (liTag2);
-    liTag2.textContent = "List item 2";
+  userEmailSpan.textContent = email;
+  userPasswordSpan.textContent = password;
 
-
- 
-
+  // Fill in code here to retrieve the last email and password.
+  // If they are null, return early from this function
+  // Else set the text of the userEmailSpan and userPasswordSpan 
+  // to the corresponding values form local storgage
   
+}
+
+signUpButton.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var email = document.querySelector("#email").value;
+  var password = document.querySelector("#password").value;
+
+  if (email === "") {
+    displayMessage("error", "Email cannot be blank");
+  } else if (password === "") {
+    displayMessage("error", "Password cannot be blank");
+  } else {
+    displayMessage("success", "Registered successfully");
+
+    localStorage.setItem ("email", email);
+    localStorage.setItem ("password", password);
+
+    renderLastRegistered ();
+    
+  // Save email and password to localStorage and render the last registered.
+  }
+});
