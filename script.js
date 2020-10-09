@@ -1,49 +1,42 @@
-var emailInput = document.querySelector("#email");
-var passwordInput = document.querySelector("#password");
-var signUpButton = document.querySelector("#sign-up");
-var msgDiv = document.querySelector("#msg");
-var userEmailSpan = document.querySelector("#user-email");
-var userPasswordSpan = document.querySelector("#user-password");
+var todoInput = document.querySelector("#todo-text");
+var todoForm = document.querySelector("#todo-form");
+var todoList = document.querySelector("#todo-list");
+var todoCountSpan = document.querySelector("#todo-count");
 
-renderLastRegistered();
+var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 
-function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute("class", type);
+renderTodos();
+
+function renderTodos() {
+  // Clear todoList element and update todoCountSpan
+  todoList.innerHTML = "";
+  todoCountSpan.textContent = todos.length;
+
+  // Render a new li for each todo
+  for (var i = 0; i < todos.length; i++) {
+    var todo = todos[i];
+
+    var li = document.createElement("li");
+    li.textContent = todo;
+    todoList.appendChild(li);
+  }
 }
 
-function renderLastRegistered() {
-  var email = localStorage.getItem ("email");
-  var password = localStorage.getItem ("password");
-
-  userEmailSpan.textContent = email;
-  userPasswordSpan.textContent = password;
-
-  // Fill in code here to retrieve the last email and password.
-  // If they are null, return early from this function
-  // Else set the text of the userEmailSpan and userPasswordSpan 
-  // to the corresponding values form local storgage
-  
-}
-
-signUpButton.addEventListener("click", function(event) {
+// When form is submitted...
+todoForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  var email = document.querySelector("#email").value;
-  var password = document.querySelector("#password").value;
+  var todoText = todoInput.value.trim();
 
-  if (email === "") {
-    displayMessage("error", "Email cannot be blank");
-  } else if (password === "") {
-    displayMessage("error", "Password cannot be blank");
-  } else {
-    displayMessage("success", "Registered successfully");
-
-    localStorage.setItem ("email", email);
-    localStorage.setItem ("password", password);
-
-    renderLastRegistered ();
-    
-  // Save email and password to localStorage and render the last registered.
+  // Return from function early if submitted todoText is blank
+  if (todoText === "") {
+    return;
   }
+
+  // Add new todoText to todos array, clear the input
+  todos.push(todoText);
+  todoInput.value = "";
+
+  // Re-render the list
+  renderTodos();
 });
