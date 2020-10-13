@@ -30,7 +30,7 @@
 
     // 1. Create code that "grabs" the div with the matching id (#drink-options);
     var targetDiv = document.getElementById("drink-options");
-    var divElement;
+    var pElement;
     // ...
 
 
@@ -42,9 +42,9 @@
     // ...
     if (drinkList.length > 0) {
       for (var counter = 0; counter < drinkList.length; counter ++) {
-        divElement = document.createElement("div");
-        divElement.textContent = drinkList[counter];
-        targetDiv.appendChild(divElement);
+        pElement = document.createElement("p");
+        pElement.textContent = drinkList[counter];
+        targetDiv.appendChild(pElement);
       }
     }
 
