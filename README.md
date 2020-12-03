@@ -1,13 +1,5 @@
-### File
+# **Instructions**
 
-* _None_
+* Spend a few moments looking over the code sent to you. First, get the server running, then begin to dissect the JavaScript code found at the bottom of `add.html`.
 
-### Instructions
-
-* From scratch, create a small application that will do two things:
-
-  1. Check which OS the user is on and alert a message that says, _"Welcome, Windows user!"_ or, _"Welcome, Mac user!"_
-
-  2. Then check their **geolocation** and redirect them to a new page depending on if they are located in the eastern or western half of the USA.
-
-* You'll need to do some research on how to gather some of this information, but here's a hint: it's going to be part of the `window` object we just looked at.
+* Explain to one another what the code does, what its for, and why its relevant to the application so far. Be sure to explain to one another what the `$.post` code is doing.
